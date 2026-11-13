@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Telegram вголос озвучує нові повідомлення з вибраних чатів Telegram на Android.">
+  <meta name="theme-color" content="#0e1326">
+  <title>Telegram вголос — Plyska Apps</title>
+  <link rel="icon" type="image/png" href="/voiced-telegram-icon.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, system-ui, sans-serif;
+      color: #f4f7ff;
+      background: #0e1326;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; }
+    .shell { width: min(66rem, calc(100% - 2.5rem)); margin-inline: auto; }
+    header { padding-block: 1.65rem; color: #c5cde4; font-weight: 650; }
+    main { padding-block: clamp(1rem, 6vw, 4rem) clamp(2.75rem, 7vw, 5rem); }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: clamp(1.5rem, 5vw, 4rem);
+      padding: clamp(1.5rem, 6vw, 4.25rem);
+      background: radial-gradient(ellipse at 100% 0%, #243768, transparent 63%), #151e37;
+      border: 1px solid #334266;
+      border-radius: 1.75rem;
+    }
+    .icon {
+      display: block;
+      width: clamp(5rem, 19vw, 11.5rem);
+      height: auto;
+      border-radius: 24%;
+      box-shadow: 0 1rem 2.5rem #080d20a8;
+    }
+    .platform { margin: 0 0 0.6rem; color: #a7ddff; font-weight: 650; }
+    h1 {
+      font-size: clamp(2.25rem, 6vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+      margin: 0;
+      text-wrap: balance;
+    }
+    .intro {
+      max-width: 38ch;
+      margin: 1.2rem 0 0;
+      color: #e3e9fa;
+      font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+      line-height: 1.55;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0 0;
+    }
+    .features > div { border-top: 1px solid #334266; padding-top: 1rem; }
+    dt { font-weight: 700; }
+    dd { margin: 0.4rem 0 0; color: #c5cde4; line-height: 1.55; }
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.6rem;
+      padding-block: 1.25rem 2rem;
+      border-top: 1px solid #334266;
+    }
+    a { color: #a7ddff; text-underline-offset: 0.25em; }
+    a:hover { color: #fff; }
+    a:focus-visible { outline: 2px solid #a7ddff; outline-offset: 5px; border-radius: 0.15rem; }
+    @media (max-width: 42rem) {
+      .hero, .features { grid-template-columns: 1fr; }
+      .icon { grid-row: 1; }
+      .features { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="shell">Plyska Apps</header>
+  <main class="shell">
+    <section class="hero" aria-labelledby="app-title">
+      <div>
+        <p class="platform">Додаток для Android</p>
+        <h1 id="app-title">Telegram вголос</h1>
+        <p class="intro">Слухай нові повідомлення з вибраних чатів, груп і каналів Telegram.</p>
+      </div>
+      <img class="icon" src="/voiced-telegram-icon.png" width="512" height="512" alt="">
+    </section>
+
+    <dl class="features">
+      <div>
+        <dt>Вибір чатів</dt>
+        <dd>Обери, чиї повідомлення озвучувати.</dd>
+      </div>
+      <div>
+        <dt>Розклад озвучування</dt>
+        <dd>Задай години, коли додаток має читати повідомлення.</dd>
+      </div>
+      <div>
+        <dt>Два рушії озвучування</dt>
+        <dd>Вибери системний голос Android або локальний Supertonic 3.</dd>
+      </div>
+    </dl>
+  </main>
+  <footer class="shell">
+    <a href="/voiced-telegram-privacy/privacy-policy-uk.html">Політика конфіденційності</a>
+    <a href="mailto:boomsya@gmail.com">Зв’язатися з підтримкою</a>
+  </footer>
+</body>
+</html>
