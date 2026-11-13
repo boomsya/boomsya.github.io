@@ -75,10 +75,67 @@
       .icon { grid-row: 1; }
       .features { gap: 1rem; }
     }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .brand img {
+      width: 3.5rem;
+      height: auto;
+      border-radius: 0.85rem;
+    }
+    .screenshots { margin-top: clamp(2.75rem, 6vw, 4.75rem); }
+    .gallery-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    .gallery-header h2 { margin: 0; font-size: clamp(1.5rem, 4vw, 2rem); }
+    .gallery-language { display: grid; gap: 0.35rem; }
+    .gallery-language label { color: #c5cde4; font-size: 0.875rem; }
+    .gallery-language select {
+      min-width: 10rem;
+      min-height: 2.75rem;
+      padding: 0.5rem 0.7rem;
+      border: 1px solid #56698c;
+      border-radius: 0.65rem;
+      background: #151e37;
+      color: inherit;
+      font: inherit;
+    }
+    .gallery-language select:focus-visible { outline: 2px solid #a7ddff; outline-offset: 3px; }
+    .gallery-language[hidden] { display: none; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(0.65rem, 2vw, 1.25rem);
+    }
+    .gallery-grid a { display: block; border-radius: 0.85rem; }
+    .gallery-grid img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid #334266;
+      border-radius: inherit;
+    }
+    .gallery-grid a:hover img { border-color: #a7ddff; }
+    @media (max-width: 42rem) {
+      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 21rem) {
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <header class="shell">Plyska Apps</header>
+  <header class="shell brand">
+    <img src="/plyska-apps-logo.jpg" width="1024" height="1024" alt="">
+    <span>Plyska Apps</span>
+  </header>
   <main class="shell">
     <section class="hero" aria-labelledby="app-title">
       <div>
@@ -103,10 +160,65 @@
         <dd>Вибери системний голос Android або локальний штучний інтелект.</dd>
       </div>
     </dl>
+
+    <section class="screenshots" aria-labelledby="screenshots-title">
+      <div class="gallery-header">
+        <h2 id="screenshots-title">Скриншоти додатка</h2>
+        <div class="gallery-language" hidden>
+          <label for="screenshot-language">Мова скриншотів</label>
+          <select id="screenshot-language" aria-controls="screenshot-gallery">
+            <option value="uk" lang="uk" selected>Українська</option>
+            <option value="en-US" lang="en-US">English</option>
+            <option value="bg" lang="bg">Български</option>
+            <option value="cs-CZ" lang="cs-CZ">Čeština</option>
+            <option value="da-DK" lang="da-DK">Dansk</option>
+            <option value="de-DE" lang="de-DE">Deutsch</option>
+            <option value="et" lang="et">Eesti</option>
+            <option value="el-GR" lang="el-GR">Ελληνικά</option>
+            <option value="es-ES" lang="es-ES">Español</option>
+            <option value="fr-FR" lang="fr-FR">Français</option>
+            <option value="it-IT" lang="it-IT">Italiano</option>
+            <option value="lv" lang="lv">Latviešu</option>
+            <option value="lt" lang="lt">Lietuvių</option>
+            <option value="hu-HU" lang="hu-HU">Magyar</option>
+            <option value="nl-NL" lang="nl-NL">Nederlands</option>
+            <option value="pl-PL" lang="pl-PL">Polski</option>
+            <option value="pt-PT" lang="pt-PT">Português</option>
+            <option value="ro" lang="ro">Română</option>
+            <option value="sk" lang="sk">Slovenčina</option>
+            <option value="fi-FI" lang="fi-FI">Suomi</option>
+            <option value="sv-SE" lang="sv-SE">Svenska</option>
+            <option value="tr-TR" lang="tr-TR">Türkçe</option>
+            <option value="vi" lang="vi">Tiếng Việt</option>
+          </select>
+        </div>
+      </div>
+      <div class="gallery-grid" id="screenshot-gallery">
+        <a href="/screenshots/uk-01.jpg" data-file="01.jpg">
+          <img src="/screenshots/uk-01.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Головний екран і запуск озвучування">
+        </a>
+        <a href="/screenshots/uk-02.jpg" data-file="02.jpg">
+          <img src="/screenshots/uk-02.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Вибір каналів, груп і контактів">
+        </a>
+        <a href="/screenshots/uk-03.jpg" data-file="03.jpg">
+          <img src="/screenshots/uk-03.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Мови й голоси озвучування">
+        </a>
+        <a href="/screenshots/uk-04.jpg" data-file="04.jpg">
+          <img src="/screenshots/uk-04.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Налаштування розкладу">
+        </a>
+        <a href="/screenshots/uk-05.jpg" data-file="05.jpg">
+          <img src="/screenshots/uk-05.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Стоп-фрази й фільтри">
+        </a>
+        <a href="/screenshots/uk-06.jpg" data-file="06.jpg">
+          <img src="/screenshots/uk-06.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Локальне озвучування на пристрої">
+        </a>
+      </div>
+    </section>
   </main>
   <footer class="shell">
     <a href="/voiced-telegram-privacy/privacy-policy-uk.html">Політика конфіденційності</a>
     <a href="mailto:boomsya@gmail.com">Зв’язатися з підтримкою</a>
   </footer>
+  <script src="/screenshots/gallery.js" defer></script>
 </body>
 </html>
