@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="uk">
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Telegram вголос озвучує нові повідомлення з вибраних чатів Telegram на Android.">
+  <meta name="description" content="Listen to new messages from selected Telegram chats, groups, and channels.">
   <meta name="theme-color" content="#0e1326">
-  <title>Telegram вголос — Plyska Apps</title>
+  <title>Voiced Telegram — Plyska Apps</title>
   <link rel="icon" type="image/png" href="/voiced-telegram-icon.png">
   <style>
     :root {
@@ -80,24 +80,18 @@
       align-items: center;
       gap: 0.8rem;
     }
+    .brand { justify-content: space-between; flex-wrap: wrap; }
+    .brand-identity { display: flex; align-items: center; gap: 0.8rem; }
     .brand img {
       width: 3.5rem;
       height: auto;
       border-radius: 0.85rem;
     }
     .screenshots { margin-top: clamp(2.75rem, 6vw, 4.75rem); }
-    .gallery-header {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: end;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-    }
-    .gallery-header h2 { margin: 0; font-size: clamp(1.5rem, 4vw, 2rem); }
-    .gallery-language { display: grid; gap: 0.35rem; }
-    .gallery-language label { color: #c5cde4; font-size: 0.875rem; }
-    .gallery-language select {
+    .screenshots h2 { margin: 0 0 1.25rem; font-size: clamp(1.5rem, 4vw, 2rem); }
+    .page-language { display: grid; gap: 0.35rem; }
+    .page-language label { color: #c5cde4; font-size: 0.875rem; }
+    .page-language select {
       min-width: 10rem;
       min-height: 2.75rem;
       padding: 0.5rem 0.7rem;
@@ -107,8 +101,8 @@
       color: inherit;
       font: inherit;
     }
-    .gallery-language select:focus-visible { outline: 2px solid #a7ddff; outline-offset: 3px; }
-    .gallery-language[hidden] { display: none; }
+    .page-language select:focus-visible { outline: 2px solid #a7ddff; outline-offset: 3px; }
+    .page-language[hidden] { display: none; }
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -133,92 +127,92 @@
 </head>
 <body>
   <header class="shell brand">
-    <img src="/plyska-apps-logo.jpg" width="1024" height="1024" alt="">
-    <span>Plyska Apps</span>
+    <div class="brand-identity">
+      <img src="/plyska-apps-logo.jpg" width="1024" height="1024" alt="">
+      <span>Plyska Apps</span>
+    </div>
+    <div class="page-language" hidden>
+      <label for="site-language" data-text="languageLabel">Page language</label>
+      <select id="site-language">
+        <option value="en-US" lang="en-US" selected>English</option>
+        <option value="uk" lang="uk">Українська</option>
+        <option value="bg" lang="bg">Български</option>
+        <option value="cs-CZ" lang="cs-CZ">Čeština</option>
+        <option value="da-DK" lang="da-DK">Dansk</option>
+        <option value="de-DE" lang="de-DE">Deutsch</option>
+        <option value="et" lang="et">Eesti</option>
+        <option value="el-GR" lang="el-GR">Ελληνικά</option>
+        <option value="es-ES" lang="es-ES">Español</option>
+        <option value="fr-FR" lang="fr-FR">Français</option>
+        <option value="it-IT" lang="it-IT">Italiano</option>
+        <option value="lv" lang="lv">Latviešu</option>
+        <option value="lt" lang="lt">Lietuvių</option>
+        <option value="hu-HU" lang="hu-HU">Magyar</option>
+        <option value="nl-NL" lang="nl-NL">Nederlands</option>
+        <option value="pl-PL" lang="pl-PL">Polski</option>
+        <option value="pt-PT" lang="pt-PT">Português</option>
+        <option value="ro" lang="ro">Română</option>
+        <option value="sk" lang="sk">Slovenčina</option>
+        <option value="fi-FI" lang="fi-FI">Suomi</option>
+        <option value="sv-SE" lang="sv-SE">Svenska</option>
+        <option value="tr-TR" lang="tr-TR">Türkçe</option>
+        <option value="vi" lang="vi">Tiếng Việt</option>
+      </select>
+    </div>
   </header>
   <main class="shell">
     <section class="hero" aria-labelledby="app-title">
       <div>
-        <p class="platform">Додаток для Android</p>
-        <h1 id="app-title">Telegram вголос</h1>
-        <p class="intro">Слухай нові повідомлення з вибраних чатів, груп і каналів Telegram.</p>
+        <p class="platform" data-text="platform">Android app</p>
+        <h1 id="app-title" data-text="title">Voiced Telegram</h1>
+        <p class="intro" data-text="intro">Listen to new messages from selected Telegram chats, groups, and channels.</p>
       </div>
       <img class="icon" src="/voiced-telegram-icon.png" width="512" height="512" alt="">
     </section>
 
     <dl class="features">
       <div>
-        <dt>Вибір чатів</dt>
-        <dd>Обери, чиї повідомлення озвучувати.</dd>
+        <dt data-text="chatsTitle">Choose your chats</dt>
+        <dd data-text="chatsText">Choose which chats the app reads aloud.</dd>
       </div>
       <div>
-        <dt>Розклад озвучування</dt>
-        <dd>Задай години, коли додаток має читати повідомлення.</dd>
+        <dt data-text="scheduleTitle">Reading schedule</dt>
+        <dd data-text="scheduleText">Set the hours when the app reads messages aloud.</dd>
       </div>
       <div>
-        <dt>Два рушії озвучування</dt>
-        <dd>Вибери системний голос Android або локальний штучний інтелект.</dd>
+        <dt data-text="voiceTitle">Two ways to read aloud</dt>
+        <dd data-text="voiceText">Choose an Android system voice or on-device AI.</dd>
       </div>
     </dl>
 
     <section class="screenshots" aria-labelledby="screenshots-title">
-      <div class="gallery-header">
-        <h2 id="screenshots-title">Скриншоти додатка</h2>
-        <div class="gallery-language" hidden>
-          <label for="screenshot-language">Мова скриншотів</label>
-          <select id="screenshot-language" aria-controls="screenshot-gallery">
-            <option value="uk" lang="uk" selected>Українська</option>
-            <option value="en-US" lang="en-US">English</option>
-            <option value="bg" lang="bg">Български</option>
-            <option value="cs-CZ" lang="cs-CZ">Čeština</option>
-            <option value="da-DK" lang="da-DK">Dansk</option>
-            <option value="de-DE" lang="de-DE">Deutsch</option>
-            <option value="et" lang="et">Eesti</option>
-            <option value="el-GR" lang="el-GR">Ελληνικά</option>
-            <option value="es-ES" lang="es-ES">Español</option>
-            <option value="fr-FR" lang="fr-FR">Français</option>
-            <option value="it-IT" lang="it-IT">Italiano</option>
-            <option value="lv" lang="lv">Latviešu</option>
-            <option value="lt" lang="lt">Lietuvių</option>
-            <option value="hu-HU" lang="hu-HU">Magyar</option>
-            <option value="nl-NL" lang="nl-NL">Nederlands</option>
-            <option value="pl-PL" lang="pl-PL">Polski</option>
-            <option value="pt-PT" lang="pt-PT">Português</option>
-            <option value="ro" lang="ro">Română</option>
-            <option value="sk" lang="sk">Slovenčina</option>
-            <option value="fi-FI" lang="fi-FI">Suomi</option>
-            <option value="sv-SE" lang="sv-SE">Svenska</option>
-            <option value="tr-TR" lang="tr-TR">Türkçe</option>
-            <option value="vi" lang="vi">Tiếng Việt</option>
-          </select>
-        </div>
-      </div>
+      <h2 id="screenshots-title" data-text="galleryTitle">App screenshots</h2>
       <div class="gallery-grid" id="screenshot-gallery">
-        <a href="/screenshots/uk-01.jpg" data-file="01.jpg">
-          <img src="/screenshots/uk-01.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Головний екран і запуск озвучування">
+        <a href="/screenshots/en-US-01.jpg" data-file="01.jpg">
+          <img src="/screenshots/en-US-01.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="New messages from selected chats are read automatically">
         </a>
-        <a href="/screenshots/uk-02.jpg" data-file="02.jpg">
-          <img src="/screenshots/uk-02.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Вибір каналів, груп і контактів">
+        <a href="/screenshots/en-US-02.jpg" data-file="02.jpg">
+          <img src="/screenshots/en-US-02.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Channels, groups and contacts — only the ones you need">
         </a>
-        <a href="/screenshots/uk-03.jpg" data-file="03.jpg">
-          <img src="/screenshots/uk-03.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Мови й голоси озвучування">
+        <a href="/screenshots/en-US-03.jpg" data-file="03.jpg">
+          <img src="/screenshots/en-US-03.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Neural speech, including Ukrainian">
         </a>
-        <a href="/screenshots/uk-04.jpg" data-file="04.jpg">
-          <img src="/screenshots/uk-04.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Налаштування розкладу">
+        <a href="/screenshots/en-US-04.jpg" data-file="04.jpg">
+          <img src="/screenshots/en-US-04.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Set a daily time window for reading aloud">
         </a>
-        <a href="/screenshots/uk-05.jpg" data-file="05.jpg">
-          <img src="/screenshots/uk-05.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Стоп-фрази й фільтри">
+        <a href="/screenshots/en-US-05.jpg" data-file="05.jpg">
+          <img src="/screenshots/en-US-05.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Stop phrases, allowlists and word removal">
         </a>
-        <a href="/screenshots/uk-06.jpg" data-file="06.jpg">
-          <img src="/screenshots/uk-06.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Локальне озвучування на пристрої">
+        <a href="/screenshots/en-US-06.jpg" data-file="06.jpg">
+          <img src="/screenshots/en-US-06.jpg" width="1080" height="1920" loading="lazy" decoding="async" alt="Speech is created on your device">
         </a>
       </div>
     </section>
   </main>
   <footer class="shell">
-    <a href="/voiced-telegram-privacy/privacy-policy-uk.html">Політика конфіденційності</a>
-    <a href="mailto:boomsya@gmail.com">Зв’язатися з підтримкою</a>
+    <a id="privacy-link" href="/voiced-telegram-privacy/" data-text="privacyLabel">Privacy Policy</a>
+    <a href="mailto:boomsya@gmail.com" data-text="supportLabel">Contact support</a>
   </footer>
-  <script src="/screenshots/gallery.js" defer></script>
+  <script src="/site-language.js" defer></script>
 </body>
 </html>
